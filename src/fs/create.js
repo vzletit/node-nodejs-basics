@@ -1,11 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 
-const create = async () => {
-
-const filepath = path.join('files', 'fresh.txt');
+const filepath = path.join('src/fs/files', 'fresh.txt');
 const content = 'I am fresh and young';
 const errorMsg = 'FS operation failed';
+
+const create = async () => {
 
 fs.open(filepath, (err, fd) => {
     if (err) {

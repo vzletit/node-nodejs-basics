@@ -1,11 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 
-const rename = async () => {
+const oldFilepath = path.join('src/fs/files', 'wrongFilename.txt');
+const newFilepath = path.join('src/fs/files', 'properFilename.md');
+const errorMsg = 'FS operation failed';
 
-    const oldFilepath = path.join('files', 'wrongFilename.txt');
-    const newFilepath = path.join('files', 'properFilename.md');
-    const errorMsg = 'FS operation failed';
+const rename = async () => {    
 
     fs.open(newFilepath, (err, fd) => {
         if (err) {

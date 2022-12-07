@@ -1,9 +1,9 @@
 import fs from 'fs';
 
+const dirname = 'src/fs/files';
+const errorMsg = 'FS operation failed';
+
 const list = async () => {
-  
-    const dirname = 'files';
-    const errorMsg = 'FS operation failed';
 
     fs.readdir(dirname, (err, filesArr) => {
         if (err) {throw new Error (errorMsg)}

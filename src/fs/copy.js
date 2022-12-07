@@ -1,10 +1,10 @@
 import fs from 'fs';
 
-const copy = async () => {
+const dirName = 'src/fs/files';
+const copyDirName = 'src/fs/files_copy';
+const errorMsg = 'FS operation failed';
 
-    const dirName = 'files';
-    const copyDirName = 'files_copy';
-    const errorMsg = 'FS operation failed';
+const copy = async () => {
 
     fs.cp(dirName, copyDirName, { errorOnExist: true, force: false, recursive: true }, (err) => {
         if (err) { throw new Error(errorMsg) }

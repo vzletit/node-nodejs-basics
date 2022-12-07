@@ -1,10 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 
-const read = async () => {
-
-const filepath = path.join('files', 'fileToRead.txt');
+const filepath = path.join('src/fs/files', 'fileToRead.txt');
 const errorMsg = 'FS operation failed';
+
+
+const read = async () => {
 
 fs.readFile(filepath, { encoding: 'utf-8' }, 
 (err, fileData) => { 
