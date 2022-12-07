@@ -12,7 +12,7 @@ const read = async () => {
     
     const readFile = fs.createReadStream(filePath);
     readFile.on('data', (chunk) => { process.stdout.write(chunk) })
-    readFile.on('error', (error) => { throw new Error('error') });
+    readFile.on('error', (error) => { if (error) {throw new Error(error)} });
 
 };
 

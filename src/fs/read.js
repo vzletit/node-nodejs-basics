@@ -9,7 +9,6 @@ const __dirname = dirname(__filename);
 const filepath = path.join(__dirname, 'files', 'fileToRead.txt');
 const errorMsg = 'FS operation failed';
 
-
 const read = async () => {
 
 fs.readFile(filepath, { encoding: 'utf-8' }, 
