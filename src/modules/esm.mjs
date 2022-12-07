@@ -4,6 +4,7 @@ import { createServer as createServerHttp } from 'http';
 import objA from './files/a.json' assert { type: "json" };
 import objB from './files/b.json' assert { type: "json" };
 import { fileURLToPath } from 'url';
+import './files/c.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename); 
