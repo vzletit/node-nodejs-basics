@@ -1,7 +1,12 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'node:url';
+import { dirname } from 'node:path';
 
-const filepath = path.join('src/fs/files', 'fileToRemove.txt');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const filepath = path.join(__dirname, 'files', 'fileToRemove.txt');
 const errorMsg = 'FS operation failed';
 
 const remove = async () => {

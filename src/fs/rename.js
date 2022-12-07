@@ -1,8 +1,13 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'node:url';
+import { dirname } from 'node:path';
 
-const oldFilepath = path.join('src/fs/files', 'wrongFilename.txt');
-const newFilepath = path.join('src/fs/files', 'properFilename.md');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const oldFilepath = path.join(__dirname, 'files', 'wrongFilename.txt');
+const newFilepath = path.join(__dirname, 'files', 'properFilename.md');
 const errorMsg = 'FS operation failed';
 
 const rename = async () => {    

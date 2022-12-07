@@ -1,8 +1,13 @@
 import fs from 'fs';
-import path from 'path';
 import readline from 'readline';
+import path from 'path';
+import { fileURLToPath } from 'node:url';
+import { dirname } from 'node:path';
 
-const filePath = path.join('src/streams/files', 'fileToWrite.txt');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const filePath = path.join(__dirname, 'files', 'fileToWrite.txt');
 
 const write = async () => {
 
