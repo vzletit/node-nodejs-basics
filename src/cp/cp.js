@@ -8,9 +8,9 @@ const __dirname = path.dirname(__filename);
 const childProcessFile = path.join(__dirname, 'files', 'script.js')
 
 const spawnChildProcess = async (args) => {
+// {silent: false} pipes automatically
     const childProc = cp.fork(childProcessFile, args, {silent: true});    
-    //childProc.send(process.stdin);    
-    
+
     process.stdin.pipe(childProc.stdin);
     childProc.stdout.pipe(process.stdout);
     

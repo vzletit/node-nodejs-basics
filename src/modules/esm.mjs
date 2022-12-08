@@ -1,8 +1,8 @@
 import path from 'path';
 import  { release, version } from 'os';
 import { createServer as createServerHttp } from 'http';
-import objA from './files/a.json' assert { type: "json" };
-import objB from './files/b.json' assert { type: "json" };
+// import objA from './files/a.json' assert { type: "json" };
+// import objB from './files/b.json' assert { type: "json" };
 import { fileURLToPath } from 'url';
 import './files/c.js';
 
@@ -11,7 +11,10 @@ const __dirname = path.dirname(__filename);
 
 const random = Math.random();
 
-const unknownObject = random > 0.5 ? objA : objB
+const unknownObject = await import(random > 0.5 
+    ? './files/a.json' 
+    : './files/b.json', 
+    { assert: { type: "json" } });
 
 console.log(`Release ${release()}`);
 console.log(`Version ${version()}`);
@@ -33,7 +36,7 @@ myServer.listen(PORT, () => {
     console.log('To terminate it, use Ctrl+C combination');
 });
 
-export default {
+export {
     unknownObject,
     myServer,
 };

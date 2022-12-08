@@ -9,7 +9,6 @@ const transform = async () => {
         transform(chunk, _, callback) { callback(null, reverseStr(chunk.toString())); },        
     });
 
-
     await pipeline(process.stdin, transformStream, process.stdout);
 
 };
